@@ -1,6 +1,3 @@
-
-[![crates.io](https://img.shields.io/crates/v/restson.svg)](https://crates.io/crates/restson) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/spietika/restson-rust/master/LICENSE) [![Docs: latest](https://img.shields.io/badge/Docs-latest-green.svg)](https://docs.rs/restson/)
-
 # Restson Rust
 
 Easy-to-use REST client for Rust programming language that provides automatic serialization and deserialization from Rust structs. Provides async interface and an easy wrapper for synchronous calls. The library is implemented using [Hyper](https://github.com/hyperium/hyper) and [Serde JSON](https://github.com/serde-rs/json).
