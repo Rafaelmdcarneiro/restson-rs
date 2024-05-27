@@ -1,0 +1,36 @@
+[package]
+name = "restson"
+version = "1.5.0"
+authors = ["Sami Pietikäinen"]
+description = "Easy-to-use REST client with automatic serialization and deserialization."
+repository = "https://github.com/spietika/restson-rust"
+keywords = ["rest", "client", "http", "json", "async"]
+categories = ["network-programming", "web-programming::http-client"]
+readme = "README.md"
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+hyper = { version = "0.14", features = ["client", "http1", "http2"] }
+hyper-tls = { version = "0.5", optional = true }
+hyper-rustls = { version = "0.24", features = ["http2"], optional = true }
+futures = "^0.3"
+tokio = { version = "1", features = ["time"] }
+serde = { version = "^1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+simd-json = { version = "0.1", optional = true }
+url = "2"
+log = "^0.4.6"
+base64 = "0.13"
+
+[dev-dependencies]
+serde_derive = "^1.0"
+tokio = { version = "1", features = ["macros"] }
+
+[features]
+default = ["blocking", "lib-serde-json", "native-tls"]
+blocking = []
+lib-serde-json = ["serde", "serde_json"]
+lib-simd-json = ["serde", "simd-json", "serde_json"]
+native-tls = ["hyper-tls"]
+rustls = ["hyper-rustls"]
